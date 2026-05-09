@@ -227,7 +227,7 @@
             </p>
             
             <div class="flex flex-wrap justify-center gap-4 mb-10 no-print" data-aos="fade-up" data-aos-delay="350">
-                <a href="cv.html" target="_blank" class="flex items-center justify-center gap-2 bg-white text-astra-red border-2 border-white px-6 py-3 rounded-full font-bold hover:bg-red-50 hover:scale-105 transition shadow-lg">
+                <a href="cv.html" class="flex items-center justify-center gap-2 bg-white text-astra-red border-2 border-white px-6 py-3 rounded-full font-bold hover:bg-red-50 hover:scale-105 transition shadow-lg">
                     <i data-lucide="file-text" class="w-5 h-5"></i> Lihat CV
                 </a>
                 <a href="#projects" class="flex items-center justify-center gap-2 bg-transparent text-white border-2 border-white/30 px-6 py-3 rounded-full font-bold hover:bg-white/10 hover:border-white transition">
@@ -304,9 +304,9 @@
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Game Server (PC & Mobile)</li>
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Network Config (TCP/UDP)</li>
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Hardware Troubleshooting</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Database Management</li>
                     </ul>
                 </div>
-
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition" data-aos="fade-up" data-aos-delay="200">
                     <div class="bg-red-50 w-14 h-14 flex items-center justify-center rounded-xl mb-6 text-astra-red">
                         <i data-lucide="code" class="w-7 h-7"></i>
@@ -343,7 +343,6 @@
                         </li>
                     </ul>
                 </div>
-
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition" data-aos="fade-up" data-aos-delay="300">
                     <div class="bg-blue-50 w-14 h-14 flex items-center justify-center rounded-xl mb-6 text-blue-600">
                         <i data-lucide="cloud-lightning" class="w-7 h-7"></i>
@@ -368,7 +367,7 @@
                         <span class="text-gray-500 text-sm">Web Application</span>
                     </div>
                     <h3 class="text-3xl font-bold text-gray-900 mb-2">Sistem Absensi PKL Digital Astra</h3>
-                    <p class="text-gray-600 mb-6 text-lg">Sistem absensi digital berbasis lokasi (GPS) untuk validasi kehadiran peserta PKL secara akurat.</p>
+                    <p class="text-gray-600 mb-6 text-lg">Sistem absensi digital berbasis lokasi (GPS) untuk validasi kehadiran peserta PKL yang akurat.</p>
                     
                     <ul class="space-y-4 mb-8">
                         <li class="flex items-start">
@@ -386,7 +385,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-gray-900">Real-time Status</h4>
-                                <p class="text-sm text-gray-600">Deteksi jarak peserta PKL ke kantor secara live dengan indikator warna.</p>
+                                <p class="text-sm text-gray-600">Deteksi jarak peserta ke kantor secara live dengan indikator warna.</p>
                             </div>
                         </li>
                         <li class="flex items-start">
@@ -395,7 +394,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-gray-900">Secure Gateway</h4>
-                                <p class="text-sm text-gray-600">Sistem login aman untuk validasi identitas siswa magang.</p>
+                                <p class="text-sm text-gray-600">Sistem login aman dengan mode khusus tamu/wali.</p>
                             </div>
                         </li>
                     </ul>
@@ -403,13 +402,34 @@
                     <div class="flex flex-col sm:flex-row items-center gap-6 no-print">
                         <a href="https://absen-pkl.netlify.app" target="_blank" class="no-underline">
                             <button class="tilt-wrapper" aria-label="Lihat Demo">
-                                <div class="sensor tl"></div><div class="sensor tr"></div><div class="sensor bl"></div><div class="sensor br"></div>
+                                <div class="sensor tl"></div>
+                                <div class="sensor tr"></div>
+                                <div class="sensor bl"></div>
+                                <div class="sensor br"></div>
+
                                 <div class="visual-pill">
                                     <div class="specular-highlight"></div>
+
                                     <div class="text-label">
-                                        <span class="char" style="--i:0">L</span><span class="char" style="--i:1">i</span><span class="char" style="--i:2">v</span><span class="char" style="--i:3">e</span><span class="char" style="--i:4">&nbsp;</span><span class="char" style="--i:5">D</span><span class="char" style="--i:6">e</span><span class="char" style="--i:7">m</span><span class="char" style="--i:8">o</span>
+                                        <span class="char" style="--i:0">L</span>
+                                        <span class="char" style="--i:1">i</span>
+                                        <span class="char" style="--i:2">v</span>
+                                        <span class="char" style="--i:3">e</span>
+                                        <span class="char" style="--i:4">&nbsp;</span>
+                                        <span class="char" style="--i:5">D</span>
+                                        <span class="char" style="--i:6">e</span>
+                                        <span class="char" style="--i:7">m</span>
+                                        <span class="char" style="--i:8">o</span>
                                     </div>
-                                    <div class="chip-wrapper"><div class="chip"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 4.5L21 12M21 12L13.5 19.5M21 12H3" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div>
+
+                                    <div class="chip-wrapper">
+                                        <div class="chip">
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13.5 4.5L21 12M21 12L13.5 19.5M21 12H3" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+
                                     <div class="right-glow"></div>
                                 </div>
                             </button>
@@ -502,13 +522,16 @@
                                     <h3 class="font-bold text-gray-900 text-xl mb-0.5">Laporan Harian</h3>
                                     <p class="text-xs text-gray-500">Dokumentasi aktivitas harian peserta.</p>
                                 </div>
+                                
                                 <button class="w-full flex items-center justify-center gap-2 text-red-500 border border-red-200 bg-white hover:bg-red-50 py-2.5 rounded-lg text-sm font-medium mb-4 transition shadow-sm">
                                     <i data-lucide="trash-2" class="w-4 h-4"></i> Hapus Massal
                                 </button>
+
                                 <div class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 flex items-center gap-2 mb-3">
                                     <i data-lucide="search" class="w-5 h-5 text-gray-400"></i>
                                     <input type="text" placeholder="Cari berdasarkan nama peserta..." class="bg-transparent text-sm outline-none flex-1 text-gray-600 placeholder-gray-400">
                                 </div>
+
                                 <div class="flex gap-3 mb-6">
                                     <div class="bg-gray-100 border border-gray-200 text-gray-700 px-3 py-2.5 rounded-lg text-sm font-bold w-1/2 flex justify-between items-center">
                                         Februari 2026 <i data-lucide="chevron-down" class="w-4 h-4"></i>
@@ -517,6 +540,7 @@
                                         <i data-lucide="file-down" class="w-4 h-4"></i> Export PDF
                                     </button>
                                 </div>
+
                                 <div class="bg-white border-2 border-dashed border-gray-200 rounded-xl h-48 flex flex-col items-center justify-center text-center p-4">
                                     <div class="bg-gray-100 p-3 rounded-full mb-3">
                                         <i data-lucide="calendar-x" class="w-8 h-8 text-gray-400"></i>
