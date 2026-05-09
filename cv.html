@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Mahrobby Panji Sedayu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; color: #1f2937; }
+        .a4-container { width: 210mm; min-height: 297mm; margin: 2rem auto; background: white; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); padding: 12mm 15mm; box-sizing: border-box; }
+        .section-title { color: #CE1126; border-bottom: 2px solid #f3f4f6; padding-bottom: 4px; margin-bottom: 10px; font-weight: 700; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .custom-list { padding-left: 1.25rem; }
+        .custom-list li { position: relative; margin-bottom: 0.2rem; line-height: 1.4; }
+        .custom-list li::before { content: "•"; color: #CE1126; position: absolute; left: -1rem; font-weight: bold; }
+        
+        .galaxy-btn { --btn-bg: #0c0c14; --btn-text: #ffffff; --btn-primary: #8553f4; --btn-secondary: #3b82f6; --btn-accent: #f43f5e; --btn-font-size: 16px; font-family: system-ui, -apple-system, sans-serif; font-size: var(--btn-font-size); padding: 0.9em 2em; border-radius: 0.75em; border: none; background: var(--btn-bg); position: relative; cursor: pointer; overflow: hidden; z-index: 1; transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); box-shadow: 0 0.5em 1.5em -0.5em rgba(133, 83, 244, 0.4); }
+        .galaxy-btn__content { display: flex; align-items: center; gap: 0.75em; position: relative; z-index: 2; color: var(--btn-text); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+        .galaxy-btn__icon { width: 1.25em; height: 1.25em; transition: transform 0.3s ease; fill: var(--btn-text); }
+        .galaxy-btn::before { content: ""; position: absolute; inset: -4px; z-index: 0; background: conic-gradient(from 0deg, var(--btn-bg) 0deg, var(--btn-primary) 60deg, var(--btn-secondary) 120deg, var(--btn-bg) 180deg, var(--btn-accent) 240deg, var(--btn-primary) 300deg, var(--btn-bg) 360deg); border-radius: 0.75em; animation: rotate-nebula 4s linear infinite; filter: blur(8px); opacity: 0.7; }
+        .galaxy-btn::after { content: ""; position: absolute; inset: 2px; background: var(--btn-bg); border-radius: 0.6em; z-index: 1; }
+        .galaxy-btn__stars { position: absolute; inset: 0; z-index: 1; pointer-events: none; background-image: radial-gradient(circle at 20% 30%, white 1px, transparent 1.5px), radial-gradient(circle at 80% 70%, white 1px, transparent 1.5px), radial-gradient(circle at 40% 80%, white 0.5px, transparent 1px); background-size: 120% 120%; opacity: 0.3; }
+        @keyframes rotate-nebula { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        @page { size: A4; margin: 10mm; }
+        @media print { body { background-color: white; margin: 0; padding: 0; font-size: 12px; } .a4-container { margin: 0; box-shadow: none; width: 100%; padding: 0; } .no-print { display: none !important; } }
+    </style>
+</head>
+<body>
+    <div class="a4-container">
+        <header class="border-b-2 border-[#CE1126] pb-4 mb-4 flex justify-between items-start gap-4">
+            <div class="flex-1 text-left">
+                <h1 class="text-3xl font-bold text-gray-900 uppercase tracking-wide mb-1">Mahrobby Panji Sedayu</h1>
+                <p class="text-base font-bold text-gray-600 mb-3 tracking-wide">Mekanik Otomotif & Self-Taught Developer</p>
+                <div class="flex flex-wrap gap-y-1.5 gap-x-4 text-xs sm:text-sm text-gray-600 font-medium">
+                    <div class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-4 h-4 text-[#CE1126]"></i> Pondok Melati, Kota Bekasi</div>
+                    <div class="flex items-center gap-1.5"><i data-lucide="phone" class="w-4 h-4 text-[#CE1126]"></i> (+62) 812-8927-8289</div>
+                    <div class="flex items-center gap-1.5"><i data-lucide="mail" class="w-4 h-4 text-[#CE1126]"></i> mahrobbypanji49960@gmail.com</div>
+                    <div class="flex items-center gap-1.5"><i data-lucide="globe" class="w-4 h-4 text-[#CE1126]"></i> <a href="index.html" class="hover:text-[#CE1126]">Portofolio Digital</a></div>
+                </div>
+            </div>
+            <div class="w-24 h-32 shrink-0 border border-gray-300 overflow-hidden rounded-sm">
+                <img src="Profil_CV1.PNG" alt="Pas Foto Mahrobby" class="w-full h-full object-cover">
+            </div>
+        </header>
+
+        <section class="mb-4">
+            <h2 class="section-title">Profil Profesional</h2>
+            <p class="text-sm text-gray-700 text-justify leading-relaxed">
+                Profesional yang adaptif dengan keahlian otodidak di bidang Web Development dan Server Administration berbasis teknologi AI. Terbukti proaktif membangun solusi digital untuk efisiensi operasional peserta magang (PKL) di tengah rutinitas pekerjaan teknis di DSO Cibubur.
+            </p>
+        </section>
+
+        <section class="mb-4">
+            <h2 class="section-title">Keahlian Teknis</h2>
+            <div class="text-sm text-gray-700 grid grid-cols-1 md:grid-cols-2 gap-2">
+                <ul class="custom-list">
+                    <li><span class="font-semibold text-gray-900">IT Support & Server:</span> Windows Server, Game Server Integration PC & Mobile, Basic Networking.</li>
+                    <li><span class="font-semibold text-gray-900">Monitoring & Troubleshoot:</span> Resource Monitoring (RAM/CPU), Log Analysis, Uptime Management.</li>
+                </ul>
+                <ul class="custom-list">
+                    <li><span class="font-semibold text-gray-900">Web Development:</span> HTML5, CSS3, JavaScript, Tailwind CSS, React.js.</li>
+                    <li><span class="font-semibold text-gray-900">Tools:</span> AI-Assisted Development, Git, Netlify/Vercel.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="mb-4">
+            <h2 class="section-title">Pengalaman Kerja Profesional</h2>
+            <div class="mb-3">
+                <div class="flex justify-between items-baseline"><h3 class="text-base font-bold text-gray-900">Astra Daihatsu Cibubur (DSO Cibubur)</h3><span class="text-sm font-semibold text-[#CE1126]">2021 - Sekarang</span></div>
+                <p class="text-sm font-medium text-gray-600 mb-1.5 italic">Mekanik Salon (Man Power Vendor CV. Enigma) & Inisiator Digitalisasi</p>
+                <ul class="custom-list text-sm text-gray-700">
+                    <li>Melakukan perawatan detailing kendaraan tingkat lanjut (Exterior, Interior, Engine Treatment).</li>
+                    <li>Merancang dan mengelola aplikasi web internal guna digitalisasi sistem absensi peserta PKL dan pelaporan harian karyawan.</li>
+                </ul>
+            </div>
+            <div class="mb-3">
+                <div class="flex justify-between items-baseline"><h3 class="text-base font-bold text-gray-900">Gerobak Kopi Bang Raden</h3><span class="text-sm font-semibold text-[#CE1126]">2020 - 2021</span></div>
+                <p class="text-sm font-medium text-gray-600 mb-1.5 italic">Kepala Divisi Runner / Waiters</p>
+                <ul class="custom-list text-sm text-gray-700"><li>Memimpin tim pelayanan lapangan guna menjamin efisiensi operasional harian outlet.</li></ul>
+            </div>
+            <div>
+                <div class="flex justify-between items-baseline"><h3 class="text-base font-bold text-gray-900">Universitas Islam As-Syafi'iyah</h3><span class="text-sm font-semibold text-[#CE1126]">2019</span></div>
+                <p class="text-sm font-medium text-gray-600 mb-1.5 italic">Staff Tata Usaha & Perpustakaan (Magang)</p>
+                <ul class="custom-list text-sm text-gray-700"><li>Mengelola administrasi surat resmi dan penjadwalan sidang skripsi mahasiswa.</li></ul>
+            </div>
+        </section>
+
+        <section class="mb-4">
+            <h2 class="section-title">Portofolio IT (Mandiri & AI-Assisted)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm text-gray-700">
+                <div class="border p-2.5 rounded-lg bg-gray-50"><h4 class="font-bold mb-1">Game Server Management</h4><p class="text-xs">Operasional server lintas platform (PC & Mobile) & Monitoring RAM/CPU.</p></div>
+                <div class="border p-2.5 rounded-lg bg-gray-50"><h4 class="font-bold mb-1">Sistem Absensi PKL Digital</h4><p class="text-xs">Validasi kehadiran berbasis GPS untuk akurasi data peserta PKL.</p></div>
+                <div class="border p-2.5 rounded-lg bg-gray-50"><h4 class="font-bold mb-1">Digital Monitoring Sys</h4><p class="text-xs">Logbook digital terintegrasi fitur ekspor PDF otomatis untuk laporan bulanan.</p></div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Pendidikan Formal</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div><h3 class="text-sm font-bold text-gray-900">SMK Bina Insan Kamil</h3><p class="text-sm text-gray-600 font-medium">Administrasi Perkantoran (Lulus 2020)</p></div>
+                <div class="space-y-1"><p class="text-sm text-gray-700"><b>SMPN 35 Bekasi</b> (2017) | <b>SDN Jatimurni IV</b> (2014)</p></div>
+            </div>
+        </section>
+    </div>
+
+    <div class="text-center pb-12 pt-4 no-print print:hidden flex flex-col items-center gap-4">
+        <button class="galaxy-btn" onclick="window.print()"><span class="galaxy-btn__content"><span class="galaxy-btn__text">Save as PDF</span><svg class="galaxy-btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path d="M13 14h-2a8.999 8.999 0 0 0-7.968 4.81A10.136 10.136 0 0 1 3 18C3 12.477 7.477 8 13 8V3l10 8-10 8v-5z" fill="currentColor"></path></svg></span><span class="galaxy-btn__glow"></span><span class="galaxy-btn__stars"></span></button>
+    </div>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
