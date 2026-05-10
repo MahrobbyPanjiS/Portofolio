@@ -3,24 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Portofolio - Mahrobby Panji Sedayu</title>
+    
+    <meta name="description" content="Portofolio IT Mahrobby Panji Sedayu. Web Developer & Server Admin di Enigma (DSO Cibubur).">
+    <meta property="og:title" content="Portofolio IT - Mahrobby Panji Sedayu">
+    <meta property="og:description" content="Inisiatif Pengembangan Aplikasi Internal (HRIS) & Infrastruktur Server. Lihat berbagai project Web App dan Manajemen Server di sini!">
+    <meta property="og:image" content="https://portofolio-mahrobby.vercel.app/Profil_CV1.PNG">
+    <meta property="og:url" content="https://portofolio-mahrobby.vercel.app/">
+    <meta property="og:type" content="website">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'astra-red': '#CE1126',
+                    }
+                }
+            }
+        }
+    </script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <script src="https://unpkg.com/lucide@latest"></script>
+    
     <style>
+        /* --- GENERAL --- */
         body { 
             font-family: 'Inter', sans-serif; 
             overflow-x: hidden; 
         }
+        
         .astra-red { 
             background-color: #CE1126; 
         }
+        
         .text-astra-red { 
             color: #CE1126; 
         }
+
         .font-mono-custom { 
             font-family: 'Fira Code', monospace; 
         }
@@ -34,6 +60,7 @@
             background: white;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
+        
         .phone-notch {
             position: absolute;
             top: 0;
@@ -49,25 +76,28 @@
 
         /* --- FRAME BROWSER/LAPTOP (Untuk ENIGMA) --- */
         .browser-frame {
-            border-radius: 0.75rem; 
-            border: 1px solid #e5e7eb; 
-            background: white; 
-            overflow: hidden; 
+            border-radius: 0.75rem;
+            border: 1px solid #e5e7eb;
+            background: white;
+            overflow: hidden;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
+        
         .browser-header {
-            background: #f3f4f6; 
-            padding: 0.75rem 1rem; 
-            display: flex; 
-            align-items: center; 
-            gap: 0.5rem; 
+            background: #f3f4f6;
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             border-bottom: 1px solid #e5e7eb;
         }
+        
         .browser-dot { 
             width: 12px; 
             height: 12px; 
             border-radius: 50%; 
         }
+        
         .dot-red { background-color: #ef4444; }
         .dot-yellow { background-color: #f59e0b; }
         .dot-green { background-color: #10b981; }
@@ -80,6 +110,7 @@
             display: flex;
             align-items: center;
         }
+        
         .ui-nav-container {
             position: absolute;
             inset: 0;
@@ -90,6 +121,7 @@
             align-items: center;
             padding: 0.2em;
         }
+        
         .ui-outline {
             position: absolute;
             inset: 0;
@@ -97,6 +129,7 @@
             width: 100%;
             height: 100%;
         }
+        
         .ui-rect {
             stroke-dashoffset: 5;
             stroke-dasharray: 0 0 10 40 10 40;
@@ -106,11 +139,13 @@
             fill: transparent;
             rx: 24px;
         }
+        
         .ui-nav-container:hover .ui-outline .ui-rect {
             transition: 999999s;
             stroke-dashoffset: 1;
             stroke-dasharray: 0;
         }
+        
         .ui-btn {
             padding: 0.5em 1.2em;
             color: #4B5563;
@@ -121,11 +156,13 @@
             text-decoration: none;
             z-index: 10;
         }
+        
         .ui-btn:hover {
             color: #CE1126;
             background: rgba(206, 17, 38, 0.05);
             border-radius: 999px;
         }
+        
         .ui-btn:nth-child(1):hover ~ svg .ui-rect { stroke-dashoffset: 0; stroke-dasharray: 0 2 8 73.3 8 10.7; }
         .ui-btn:nth-child(2):hover ~ svg .ui-rect { stroke-dashoffset: 0; stroke-dasharray: 0 12.6 9.5 49.3 9.5 31.6; }
         .ui-btn:nth-child(3):hover ~ svg .ui-rect { stroke-dashoffset: 0; stroke-dasharray: 0 24.5 8.5 27.5 8.5 55.5; }
@@ -145,10 +182,11 @@
             background: transparent;
             padding: 0;
         }
+        
         .visual-pill {
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, #FF3D4A, #CE1126); 
+            background: linear-gradient(135deg, #FF3D4A, #CE1126);
             border-radius: 999px;
             display: flex;
             justify-content: space-between;
@@ -159,95 +197,105 @@
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        .text-label { 
-            font-weight: 700; 
-            font-size: 15px; 
-            color: white; 
-            display: flex; 
-            gap: 1px; 
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+        
+        .text-label {
+            font-weight: 700;
+            font-size: 15px;
+            color: white;
+            display: flex;
+            gap: 1px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .char { 
-            display: inline-block; 
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            transition-delay: calc(var(--i) * 0.03s); 
+        
+        .char {
+            display: inline-block;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition-delay: calc(var(--i) * 0.03s);
         }
+        
         .tilt-wrapper:hover .char { 
             transform: translateY(-3px); 
         }
-        .chip-wrapper { 
-            width: 40px; 
-            height: 40px; 
-            background: rgba(255, 255, 255, 0.2); 
-            border-radius: 50%; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            backdrop-filter: blur(5px); 
-            transition: background 0.3s ease, transform 0.3s ease; 
+        
+        .chip-wrapper {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+            transition: background 0.3s ease, transform 0.3s ease;
         }
-        .arrow-icon { 
-            width: 20px; 
-            height: 20px; 
-            stroke: white; 
-            transition: transform 0.3s ease; 
+        
+        .arrow-icon {
+            width: 20px;
+            height: 20px;
+            stroke: white;
+            transition: transform 0.3s ease;
         }
+        
         .tilt-wrapper:hover .arrow-icon { 
             transform: translateX(3px) rotate(-45deg); 
         }
+        
         .tilt-wrapper:hover .chip-wrapper { 
             background: rgba(255, 255, 255, 0.35); 
             transform: scale(1.05); 
         }
+        
         .tilt-wrapper:hover .visual-pill { 
             box-shadow: 0 15px 30px -5px rgba(206, 17, 38, 0.7); 
         }
-
-        /* --- SENSORS FOR TILT 3D EFFECT --- */
-        .sensor { 
-            position: absolute; 
-            width: 50%; 
-            height: 50%; 
-            z-index: 10; 
+        
+        .sensor {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            z-index: 10;
         }
+        
         .sensor.tl { top: 0; left: 0; }
         .sensor.tr { top: 0; right: 0; }
         .sensor.bl { bottom: 0; left: 0; }
         .sensor.br { bottom: 0; right: 0; }
+        
         .sensor.tl:hover ~ .visual-pill { transform: rotateX(12deg) rotateY(-12deg); }
         .sensor.tr:hover ~ .visual-pill { transform: rotateX(12deg) rotateY(12deg); }
         .sensor.bl:hover ~ .visual-pill { transform: rotateX(-12deg) rotateY(-12deg); }
         .sensor.br:hover ~ .visual-pill { transform: rotateX(-12deg) rotateY(12deg); }
-
-        .specular-highlight { 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 40%; 
-            background: linear-gradient(to bottom, rgba(255,255,255,0.25), transparent); 
-            pointer-events: none; 
+        
+        .specular-highlight {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.25), transparent);
+            pointer-events: none;
         }
-        .right-glow { 
-            position: absolute; 
-            right: -20px; 
-            top: 50%; 
-            transform: translateY(-50%); 
-            width: 60px; 
-            height: 60px; 
-            background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%); 
-            pointer-events: none; 
-            opacity: 0; 
-            transition: opacity 0.3s; 
+        
+        .right-glow {
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
         }
+        
         .tilt-wrapper:hover .right-glow { 
             opacity: 1; 
         }
 
-        /* --- CUSTOM PROFILE CARD STYLES --- */
+        /* --- CUSTOM PROFILE CARD STYLES WITH ANIMATION --- */
         .card {
-            background-color: white;
-            padding: 24px;
+            padding: 4px;
             border-radius: 24px;
             display: flex;
             flex-direction: column;
@@ -258,42 +306,96 @@
             width: 100%;
             position: relative;
             z-index: 20;
+            overflow: hidden;
+            background: transparent;
+            cursor: pointer;
         }
+        
         .card:hover { 
             transform: translateY(-5px); 
         }
-        .card .image { 
-            width: 90px; 
-            height: 90px; 
-            border-radius: 50%; 
-            object-fit: cover; 
-            border: 4px solid #CE1126; 
-            margin-bottom: 12px; 
-            background-color: #f8f8f8; 
-            padding: 4px; 
+
+        /* Rotating Border Animation */
+        .card::before {
+            opacity: 0;
+            content: " ";
+            position: absolute;
+            display: block;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(90deg, #CE1126, #387ef0);
+            transition: opacity 300ms;
+            animation: rotation_9018 4000ms infinite linear;
+            animation-play-state: paused;
+            z-index: -2;
+            top: -50%;
+            left: -50%;
         }
-        .card .heading { 
-            font-size: 1.25rem; 
-            font-weight: 800; 
-            color: #111827; 
-            text-align: center; 
-            line-height: 1.2; 
+        
+        .card:hover::before { 
+            opacity: 1; 
+            animation-play-state: running; 
         }
-        .card .sub-heading { 
-            font-size: 0.85rem; 
-            font-weight: 500; 
-            color: #6B7280; 
-            text-align: center; 
-            margin-top: 4px; 
-            margin-bottom: 16px; 
+        
+        /* Inner Card Background */
+        .card::after {
+            position: absolute;
+            content: " ";
+            display: block;
+            inset: 4px;
+            background: white;
+            border-radius: 20px;
+            z-index: -1;
         }
 
-        /* --- ANIMATION & PRINT STYLES --- */
+        .card-content {
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .card .image {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #CE1126;
+            margin-bottom: 12px;
+            background-color: #f8f8f8;
+            padding: 4px;
+        }
+        
+        .card .heading {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #111827;
+            text-align: center;
+            line-height: 1.2;
+        }
+        
+        .card .sub-heading {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #6B7280;
+            text-align: center;
+            margin-top: 4px;
+            margin-bottom: 16px;
+        }
+
+        @keyframes rotation_9018 {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
         .blink { 
             animation: blinker 1s linear infinite; 
         }
-        @keyframes blinker { 
-            50% { opacity: 0; } 
+        
+        @keyframes blinker {
+            50% { opacity: 0; }
         }
 
         @media print {
@@ -310,17 +412,21 @@
     <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 no-print" data-aos="fade-down" data-aos-duration="800">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <a href="#home" class="text-xl font-bold tracking-tight text-gray-900 cursor-pointer no-underline">Mahrobby<span class="text-astra-red">.Dev</span></a>
+                <a href="#home" class="text-xl font-bold tracking-tight text-gray-900 cursor-pointer no-underline">
+                    Mahrobby<span class="text-astra-red">.Dev</span>
+                </a>
                 
-                <div class="hidden md:block ui-nav-wrapper">
-                    <div class="ui-nav-container">
-                        <a href="#about" class="ui-btn">About</a>
-                        <a href="#skills" class="ui-btn">Skills</a>
-                        <a href="#projects" class="ui-btn">Projects</a>
-                        <a href="#contact" class="ui-btn">Contact</a>
-                        <svg class="ui-outline">
-                            <rect class="ui-rect" pathLength="100" width="100%" height="100%"></rect>
-                        </svg>
+                <div class="hidden md:flex items-center gap-4">
+                    <div class="ui-nav-wrapper">
+                        <div class="ui-nav-container">
+                            <a href="#about" class="ui-btn">About</a>
+                            <a href="#skills" class="ui-btn">Skills</a>
+                            <a href="#projects" class="ui-btn">Projects</a>
+                            <a href="#contact" class="ui-btn">Contact</a>
+                            <svg class="ui-outline">
+                                <rect class="ui-rect" pathLength="100" width="100%" height="100%"></rect>
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -349,9 +455,11 @@
             </div>
             
             <div class="card" data-aos="zoom-in-up" data-aos-delay="400" data-aos-duration="800">
-              <img src="Profil_CV1.PNG" alt="Mahrobby Panji Sedayu" class="image" />
-              <div class="heading">Mahrobby Panji Sedayu</div>
-              <div class="sub-heading">Web Developer & Server Admin | Enigma (DSO Cibubur)</div>
+                <div class="card-content">
+                    <img src="Profil_CV1.PNG" alt="Mahrobby Panji Sedayu" class="image" />
+                    <div class="heading">Mahrobby Panji Sedayu</div>
+                    <div class="sub-heading">Web Developer & Server Admin | Enigma (DSO Cibubur)</div>
+                </div>
             </div>
 
             <div class="mt-12 animate-bounce no-print" data-aos="fade-up" data-aos-delay="600">
@@ -469,21 +577,27 @@
                     
                     <ul class="space-y-4 mb-8">
                         <li class="flex items-start">
-                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0"><i data-lucide="users" class="w-5 h-5"></i></div>
+                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0">
+                                <i data-lucide="users" class="w-5 h-5"></i>
+                            </div>
                             <div>
                                 <h4 class="font-bold text-gray-900">Employee Self-Service (ESS)</h4>
                                 <p class="text-sm text-gray-600">Manajemen profil, absensi GPS, dan pengajuan otomatis untuk form cuti & kas operasional (Kokas).</p>
                             </div>
                         </li>
                         <li class="flex items-start">
-                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0"><i data-lucide="pie-chart" class="w-5 h-5"></i></div>
+                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0">
+                                <i data-lucide="pie-chart" class="w-5 h-5"></i>
+                            </div>
                             <div>
                                 <h4 class="font-bold text-gray-900">Payroll & Financial Dashboard</h4>
                                 <p class="text-sm text-gray-600">Sistem distribusi slip gaji digital dan optimasi pelaporan Unit Entry Cabang.</p>
                             </div>
                         </li>
                         <li class="flex items-start">
-                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0"><i data-lucide="layout-dashboard" class="w-5 h-5"></i></div>
+                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0">
+                                <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+                            </div>
                             <div>
                                 <h4 class="font-bold text-gray-900">Centralized Control Panel</h4>
                                 <p class="text-sm text-gray-600">Manajemen akses admin penuh (CMS) untuk kontrol seluruh data aplikasi dan afiliasi social media.</p>
@@ -494,13 +608,30 @@
                     <div class="flex flex-col sm:flex-row items-center gap-6 no-print">
                         <a href="https://enigmal.vercel.app/" target="_blank" class="no-underline">
                             <button class="tilt-wrapper" aria-label="Lihat Demo">
-                                <div class="sensor tl"></div><div class="sensor tr"></div><div class="sensor bl"></div><div class="sensor br"></div>
+                                <div class="sensor tl"></div>
+                                <div class="sensor tr"></div>
+                                <div class="sensor bl"></div>
+                                <div class="sensor br"></div>
                                 <div class="visual-pill">
                                     <div class="specular-highlight"></div>
                                     <div class="text-label">
-                                        <span class="char" style="--i:0">L</span><span class="char" style="--i:1">i</span><span class="char" style="--i:2">v</span><span class="char" style="--i:3">e</span><span class="char" style="--i:4">&nbsp;</span><span class="char" style="--i:5">D</span><span class="char" style="--i:6">e</span><span class="char" style="--i:7">m</span><span class="char" style="--i:8">o</span>
+                                        <span class="char" style="--i:0">L</span>
+                                        <span class="char" style="--i:1">i</span>
+                                        <span class="char" style="--i:2">v</span>
+                                        <span class="char" style="--i:3">e</span>
+                                        <span class="char" style="--i:4">&nbsp;</span>
+                                        <span class="char" style="--i:5">D</span>
+                                        <span class="char" style="--i:6">e</span>
+                                        <span class="char" style="--i:7">m</span>
+                                        <span class="char" style="--i:8">o</span>
                                     </div>
-                                    <div class="chip-wrapper"><div class="chip"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 4.5L21 12M21 12L13.5 19.5M21 12H3" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div>
+                                    <div class="chip-wrapper">
+                                        <div class="chip">
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13.5 4.5L21 12M21 12L13.5 19.5M21 12H3" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
                                     <div class="right-glow"></div>
                                 </div>
                             </button>
@@ -567,14 +698,17 @@
                             <div class="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
                                 <div class="bg-green-50 border border-green-100 p-3 rounded-xl flex justify-between items-center shadow-sm">
                                     <div>
-                                        <div class="flex items-center gap-1 text-green-700 font-bold text-sm mb-1"><i data-lucide="map-pin" class="w-4 h-4"></i> Status Lokasi</div>
+                                        <div class="flex items-center gap-1 text-green-700 font-bold text-sm mb-1">
+                                            <i data-lucide="map-pin" class="w-4 h-4"></i> Status Lokasi
+                                        </div>
                                         <div class="text-xs text-gray-500">Jarak ke Kantor</div>
                                         <div class="text-green-600 font-bold text-lg">8 Meter</div>
                                     </div>
                                     <div class="text-right">
                                         <div class="flex gap-1 mb-1">
-                                            <button class="text-[10px] flex items-center gap-0.5 bg-white border border-blue-200 text-blue-600 px-2 py-1 rounded"><i data-lucide="map" class="w-3 h-3"></i> Lihat Peta</button>
-                                            <button class="text-[10px] flex items-center gap-0.5 bg-white border border-gray-200 text-gray-600 px-2 py-1 rounded"><i data-lucide="refresh-cw" class="w-3 h-3"></i> Refresh</button>
+                                            <button class="text-[10px] flex items-center gap-0.5 bg-white border border-blue-200 text-blue-600 px-2 py-1 rounded">
+                                                <i data-lucide="map" class="w-3 h-3"></i> Peta
+                                            </button>
                                         </div>
                                         <div class="text-[10px] text-gray-500">Batas Radius</div>
                                         <div class="text-xs font-bold text-gray-700">200 Meter</div>
@@ -582,7 +716,9 @@
                                 </div>
                                 <div>
                                     <label class="text-xs font-bold text-gray-500 ml-1 mb-1 block">NAMA PESERTA PKL</label>
-                                    <div class="bg-white border border-red-300 text-gray-700 p-3 rounded-lg text-center font-medium shadow-sm">-- Pilih Nama Peserta --</div>
+                                    <div class="bg-white border border-red-300 text-gray-700 p-3 rounded-lg text-center font-medium shadow-sm">
+                                        -- Pilih Nama Peserta --
+                                    </div>
                                 </div>
                                 <div class="grid grid-cols-2 gap-3">
                                     <button class="bg-green-50 border-2 border-green-500 p-4 rounded-xl flex flex-col items-center justify-center shadow-sm relative overflow-hidden">
@@ -617,14 +753,18 @@
                     
                     <ul class="space-y-4 mb-8">
                         <li class="flex items-start">
-                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0"><i data-lucide="map-pin" class="w-5 h-5"></i></div>
+                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
                             <div>
                                 <h4 class="font-bold text-gray-900">Geo-Fencing Technology</h4>
                                 <p class="text-sm text-gray-600">Validasi lokasi otomatis dengan radius toleransi yang dapat diatur (misal: 200m).</p>
                             </div>
                         </li>
                         <li class="flex items-start">
-                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0"><i data-lucide="activity" class="w-5 h-5"></i></div>
+                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0">
+                                <i data-lucide="activity" class="w-5 h-5"></i>
+                            </div>
                             <div>
                                 <h4 class="font-bold text-gray-900">Real-time Status</h4>
                                 <p class="text-sm text-gray-600">Deteksi jarak peserta PKL ke kantor secara live dengan indikator warna.</p>
@@ -635,11 +775,30 @@
                     <div class="flex flex-col sm:flex-row items-center gap-6 no-print">
                         <a href="https://absen-pkl.netlify.app" target="_blank" class="no-underline">
                             <button class="tilt-wrapper" aria-label="Lihat Demo">
-                                <div class="sensor tl"></div><div class="sensor tr"></div><div class="sensor bl"></div><div class="sensor br"></div>
+                                <div class="sensor tl"></div>
+                                <div class="sensor tr"></div>
+                                <div class="sensor bl"></div>
+                                <div class="sensor br"></div>
                                 <div class="visual-pill">
                                     <div class="specular-highlight"></div>
-                                    <div class="text-label"><span class="char" style="--i:0">L</span><span class="char" style="--i:1">i</span><span class="char" style="--i:2">v</span><span class="char" style="--i:3">e</span><span class="char" style="--i:4">&nbsp;</span><span class="char" style="--i:5">D</span><span class="char" style="--i:6">e</span><span class="char" style="--i:7">m</span><span class="char" style="--i:8">o</span></div>
-                                    <div class="chip-wrapper"><div class="chip"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 4.5L21 12M21 12L13.5 19.5M21 12H3" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div>
+                                    <div class="text-label">
+                                        <span class="char" style="--i:0">L</span>
+                                        <span class="char" style="--i:1">i</span>
+                                        <span class="char" style="--i:2">v</span>
+                                        <span class="char" style="--i:3">e</span>
+                                        <span class="char" style="--i:4">&nbsp;</span>
+                                        <span class="char" style="--i:5">D</span>
+                                        <span class="char" style="--i:6">e</span>
+                                        <span class="char" style="--i:7">m</span>
+                                        <span class="char" style="--i:8">o</span>
+                                    </div>
+                                    <div class="chip-wrapper">
+                                        <div class="chip">
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13.5 4.5L21 12M21 12L13.5 19.5M21 12H3" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
                                     <div class="right-glow"></div>
                                 </div>
                             </button>
@@ -660,14 +819,18 @@
                     
                     <ul class="space-y-4 mb-8">
                         <li class="flex items-start">
-                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0"><i data-lucide="clipboard-list" class="w-5 h-5"></i></div>
+                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0">
+                                <i data-lucide="clipboard-list" class="w-5 h-5"></i>
+                            </div>
                             <div>
                                 <h4 class="font-bold text-gray-900">Digital Logbook</h4>
                                 <p class="text-sm text-gray-600">Input laporan harian dengan bukti dokumentasi foto secara real-time.</p>
                             </div>
                         </li>
                         <li class="flex items-start">
-                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0"><i data-lucide="file-check" class="w-5 h-5"></i></div>
+                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0">
+                                <i data-lucide="file-check" class="w-5 h-5"></i>
+                            </div>
                             <div>
                                 <h4 class="font-bold text-gray-900">Auto-Reporting</h4>
                                 <p class="text-sm text-gray-600">Fitur Export PDF otomatis untuk rekap bulanan tanpa rekap manual.</p>
@@ -678,11 +841,30 @@
                     <div class="flex flex-col sm:flex-row items-center gap-6 no-print">
                          <a href="https://pklmonitoring.netlify.app" target="_blank" class="no-underline">
                             <button class="tilt-wrapper" aria-label="Lihat Demo">
-                                <div class="sensor tl"></div><div class="sensor tr"></div><div class="sensor bl"></div><div class="sensor br"></div>
+                                <div class="sensor tl"></div>
+                                <div class="sensor tr"></div>
+                                <div class="sensor bl"></div>
+                                <div class="sensor br"></div>
                                 <div class="visual-pill">
                                     <div class="specular-highlight"></div>
-                                    <div class="text-label"><span class="char" style="--i:0">L</span><span class="char" style="--i:1">i</span><span class="char" style="--i:2">v</span><span class="char" style="--i:3">e</span><span class="char" style="--i:4">&nbsp;</span><span class="char" style="--i:5">D</span><span class="char" style="--i:6">e</span><span class="char" style="--i:7">m</span><span class="char" style="--i:8">o</span></div>
-                                    <div class="chip-wrapper"><div class="chip"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 4.5L21 12M21 12L13.5 19.5M21 12H3" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div>
+                                    <div class="text-label">
+                                        <span class="char" style="--i:0">L</span>
+                                        <span class="char" style="--i:1">i</span>
+                                        <span class="char" style="--i:2">v</span>
+                                        <span class="char" style="--i:3">e</span>
+                                        <span class="char" style="--i:4">&nbsp;</span>
+                                        <span class="char" style="--i:5">D</span>
+                                        <span class="char" style="--i:6">e</span>
+                                        <span class="char" style="--i:7">m</span>
+                                        <span class="char" style="--i:8">o</span>
+                                    </div>
+                                    <div class="chip-wrapper">
+                                        <div class="chip">
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13.5 4.5L21 12M21 12L13.5 19.5M21 12H3" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
                                     <div class="right-glow"></div>
                                 </div>
                             </button>
@@ -697,7 +879,9 @@
                          <div class="h-full flex flex-col bg-gray-50 font-sans">
                             <div class="bg-astra-red p-4 pt-10 flex justify-between items-center text-white shadow-md">
                                 <div class="flex items-center gap-3">
-                                    <div class="bg-white/20 p-1.5 rounded-lg"><i data-lucide="activity" class="w-5 h-5 text-white"></i></div>
+                                    <div class="bg-white/20 p-1.5 rounded-lg">
+                                        <i data-lucide="activity" class="w-5 h-5 text-white"></i>
+                                    </div>
                                     <div>
                                         <div class="font-bold text-sm leading-tight">Monitoring PKL</div>
                                         <div class="text-[10px] opacity-80">ASTRA DAIHATSU</div>
@@ -714,11 +898,17 @@
                                     <input type="text" placeholder="Cari..." class="bg-transparent text-sm outline-none flex-1 text-gray-600">
                                 </div>
                                 <div class="flex gap-3 mb-6">
-                                    <div class="bg-gray-100 border border-gray-200 text-gray-700 px-3 py-2.5 rounded-lg text-sm font-bold w-1/2 flex justify-between items-center">Feb 2026 <i data-lucide="chevron-down" class="w-4 h-4"></i></div>
-                                    <button class="bg-gray-900 text-white px-3 py-2.5 rounded-lg text-sm font-bold w-1/2 flex justify-center items-center gap-2 hover:bg-gray-800 transition shadow-sm"><i data-lucide="file-down" class="w-4 h-4"></i> Export PDF</button>
+                                    <div class="bg-gray-100 border border-gray-200 text-gray-700 px-3 py-2.5 rounded-lg text-sm font-bold w-1/2 flex justify-between items-center">
+                                        Feb 2026 <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                                    </div>
+                                    <button class="bg-gray-900 text-white px-3 py-2.5 rounded-lg text-sm font-bold w-1/2 flex justify-center items-center gap-2 hover:bg-gray-800 transition shadow-sm">
+                                        <i data-lucide="file-down" class="w-4 h-4"></i> Export PDF
+                                    </button>
                                 </div>
                                 <div class="bg-white border-2 border-dashed border-gray-200 rounded-xl h-48 flex flex-col items-center justify-center text-center p-4">
-                                    <div class="bg-gray-100 p-3 rounded-full mb-3"><i data-lucide="calendar-x" class="w-8 h-8 text-gray-400"></i></div>
+                                    <div class="bg-gray-100 p-3 rounded-full mb-3">
+                                        <i data-lucide="calendar-x" class="w-8 h-8 text-gray-400"></i>
+                                    </div>
                                     <div class="font-bold text-gray-700 mb-1">Tidak ada laporan</div>
                                 </div>
                             </div>
@@ -815,12 +1005,22 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Init Icons
         lucide.createIcons();
-        AOS.init({ once: false, offset: 100 });
+
+        // Init Animasi Scroll
+        AOS.init({
+            once: false,
+            offset: 100,
+        });
+
+        // Smooth Scroll untuk Navigasi
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
     </script>
