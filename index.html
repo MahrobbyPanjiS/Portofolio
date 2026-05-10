@@ -11,10 +11,21 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
-        .astra-red { background-color: #CE1126; }
-        .text-astra-red { color: #CE1126; }
-        .font-mono-custom { font-family: 'Fira Code', monospace; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden; 
+        }
+        .astra-red { 
+            background-color: #CE1126; 
+        }
+        .text-astra-red { 
+            color: #CE1126; 
+        }
+        .font-mono-custom { 
+            font-family: 'Fira Code', monospace; 
+        }
+        
+        /* --- FRAME HP --- */
         .phone-frame {
             border: 12px solid #1f2937;
             border-radius: 2.5rem;
@@ -36,6 +47,31 @@
             z-index: 10;
         }
 
+        /* --- FRAME BROWSER/LAPTOP (Untuk ENIGMA) --- */
+        .browser-frame {
+            border-radius: 0.75rem; 
+            border: 1px solid #e5e7eb; 
+            background: white; 
+            overflow: hidden; 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .browser-header {
+            background: #f3f4f6; 
+            padding: 0.75rem 1rem; 
+            display: flex; 
+            align-items: center; 
+            gap: 0.5rem; 
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .browser-dot { 
+            width: 12px; 
+            height: 12px; 
+            border-radius: 50%; 
+        }
+        .dot-red { background-color: #ef4444; }
+        .dot-yellow { background-color: #f59e0b; }
+        .dot-green { background-color: #10b981; }
+
         /* --- CUSTOM UIVERSE NAVBAR STYLES --- */
         .ui-nav-wrapper {
             position: relative;
@@ -44,7 +80,6 @@
             display: flex;
             align-items: center;
         }
-
         .ui-nav-container {
             position: absolute;
             inset: 0;
@@ -55,7 +90,6 @@
             align-items: center;
             padding: 0.2em;
         }
-
         .ui-outline {
             position: absolute;
             inset: 0;
@@ -63,7 +97,6 @@
             width: 100%;
             height: 100%;
         }
-
         .ui-rect {
             stroke-dashoffset: 5;
             stroke-dasharray: 0 0 10 40 10 40;
@@ -73,13 +106,11 @@
             fill: transparent;
             rx: 24px;
         }
-
         .ui-nav-container:hover .ui-outline .ui-rect {
             transition: 999999s;
             stroke-dashoffset: 1;
             stroke-dasharray: 0;
         }
-
         .ui-btn {
             padding: 0.5em 1.2em;
             color: #4B5563;
@@ -90,13 +121,11 @@
             text-decoration: none;
             z-index: 10;
         }
-
         .ui-btn:hover {
             color: #CE1126;
             background: rgba(206, 17, 38, 0.05);
             border-radius: 999px;
         }
-
         .ui-btn:nth-child(1):hover ~ svg .ui-rect { stroke-dashoffset: 0; stroke-dasharray: 0 2 8 73.3 8 10.7; }
         .ui-btn:nth-child(2):hover ~ svg .ui-rect { stroke-dashoffset: 0; stroke-dasharray: 0 12.6 9.5 49.3 9.5 31.6; }
         .ui-btn:nth-child(3):hover ~ svg .ui-rect { stroke-dashoffset: 0; stroke-dasharray: 0 24.5 8.5 27.5 8.5 55.5; }
@@ -116,7 +145,6 @@
             background: transparent;
             padding: 0;
         }
-
         .visual-pill {
             position: absolute;
             inset: 0;
@@ -131,17 +159,57 @@
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
+        .text-label { 
+            font-weight: 700; 
+            font-size: 15px; 
+            color: white; 
+            display: flex; 
+            gap: 1px; 
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+        }
+        .char { 
+            display: inline-block; 
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            transition-delay: calc(var(--i) * 0.03s); 
+        }
+        .tilt-wrapper:hover .char { 
+            transform: translateY(-3px); 
+        }
+        .chip-wrapper { 
+            width: 40px; 
+            height: 40px; 
+            background: rgba(255, 255, 255, 0.2); 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            backdrop-filter: blur(5px); 
+            transition: background 0.3s ease, transform 0.3s ease; 
+        }
+        .arrow-icon { 
+            width: 20px; 
+            height: 20px; 
+            stroke: white; 
+            transition: transform 0.3s ease; 
+        }
+        .tilt-wrapper:hover .arrow-icon { 
+            transform: translateX(3px) rotate(-45deg); 
+        }
+        .tilt-wrapper:hover .chip-wrapper { 
+            background: rgba(255, 255, 255, 0.35); 
+            transform: scale(1.05); 
+        }
+        .tilt-wrapper:hover .visual-pill { 
+            box-shadow: 0 15px 30px -5px rgba(206, 17, 38, 0.7); 
+        }
 
-        .text-label { font-weight: 700; font-size: 15px; color: white; display: flex; gap: 1px; text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .char { display: inline-block; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); transition-delay: calc(var(--i) * 0.03s); }
-        .tilt-wrapper:hover .char { transform: translateY(-3px); }
-        .chip-wrapper { width: 40px; height: 40px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px); transition: background 0.3s ease, transform 0.3s ease; }
-        .arrow-icon { width: 20px; height: 20px; stroke: white; transition: transform 0.3s ease; }
-        .tilt-wrapper:hover .arrow-icon { transform: translateX(3px) rotate(-45deg); }
-        .tilt-wrapper:hover .chip-wrapper { background: rgba(255, 255, 255, 0.35); transform: scale(1.05); }
-        .tilt-wrapper:hover .visual-pill { box-shadow: 0 15px 30px -5px rgba(206, 17, 38, 0.7); }
-
-        .sensor { position: absolute; width: 50%; height: 50%; z-index: 10; }
+        /* --- SENSORS FOR TILT 3D EFFECT --- */
+        .sensor { 
+            position: absolute; 
+            width: 50%; 
+            height: 50%; 
+            z-index: 10; 
+        }
         .sensor.tl { top: 0; left: 0; }
         .sensor.tr { top: 0; right: 0; }
         .sensor.bl { bottom: 0; left: 0; }
@@ -151,9 +219,30 @@
         .sensor.bl:hover ~ .visual-pill { transform: rotateX(-12deg) rotateY(-12deg); }
         .sensor.br:hover ~ .visual-pill { transform: rotateX(-12deg) rotateY(12deg); }
 
-        .specular-highlight { position: absolute; top: 0; left: 0; width: 100%; height: 40%; background: linear-gradient(to bottom, rgba(255,255,255,0.25), transparent); pointer-events: none; }
-        .right-glow { position: absolute; right: -20px; top: 50%; transform: translateY(-50%); width: 60px; height: 60px; background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%); pointer-events: none; opacity: 0; transition: opacity 0.3s; }
-        .tilt-wrapper:hover .right-glow { opacity: 1; }
+        .specular-highlight { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 40%; 
+            background: linear-gradient(to bottom, rgba(255,255,255,0.25), transparent); 
+            pointer-events: none; 
+        }
+        .right-glow { 
+            position: absolute; 
+            right: -20px; 
+            top: 50%; 
+            transform: translateY(-50%); 
+            width: 60px; 
+            height: 60px; 
+            background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%); 
+            pointer-events: none; 
+            opacity: 0; 
+            transition: opacity 0.3s; 
+        }
+        .tilt-wrapper:hover .right-glow { 
+            opacity: 1; 
+        }
 
         /* --- CUSTOM PROFILE CARD STYLES --- */
         .card {
@@ -170,21 +259,49 @@
             position: relative;
             z-index: 20;
         }
+        .card:hover { 
+            transform: translateY(-5px); 
+        }
+        .card .image { 
+            width: 90px; 
+            height: 90px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 4px solid #CE1126; 
+            margin-bottom: 12px; 
+            background-color: #f8f8f8; 
+            padding: 4px; 
+        }
+        .card .heading { 
+            font-size: 1.25rem; 
+            font-weight: 800; 
+            color: #111827; 
+            text-align: center; 
+            line-height: 1.2; 
+        }
+        .card .sub-heading { 
+            font-size: 0.85rem; 
+            font-weight: 500; 
+            color: #6B7280; 
+            text-align: center; 
+            margin-top: 4px; 
+            margin-bottom: 16px; 
+        }
 
-        .card:hover { transform: translateY(-5px); }
-        .card .image { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 4px solid #CE1126; margin-bottom: 12px; background-color: #f8f8f8; padding: 4px; }
-        .card .heading { font-size: 1.25rem; font-weight: 800; color: #111827; text-align: center; line-height: 1.2; }
-        .card .sub-heading { font-size: 0.85rem; font-weight: 500; color: #6B7280; text-align: center; margin-top: 4px; margin-bottom: 16px; }
-
-        .blink { animation: blinker 1s linear infinite; }
-        @keyframes blinker { 50% { opacity: 0; } }
+        /* --- ANIMATION & PRINT STYLES --- */
+        .blink { 
+            animation: blinker 1s linear infinite; 
+        }
+        @keyframes blinker { 
+            50% { opacity: 0; } 
+        }
 
         @media print {
             .no-print { display: none; }
             body { background: white; color: black; }
             .section { page-break-inside: avoid; margin-bottom: 2rem; }
             a { text-decoration: none; color: black; }
-            .phone-frame { box-shadow: none; border-color: #ddd; }
+            .phone-frame, .browser-frame { box-shadow: none; border-color: #ddd; }
         }
     </style>
 </head>
@@ -235,7 +352,7 @@
               <img src="https://uiverse.io/astronaut.png" alt="Profile Avatar" class="image" />
               <div class="heading">Mahrobby Panji Sedayu</div>
               <div class="sub-heading">Web Developer & Server Admin | Enigma (DSO Cibubur)</div>
-              </div>
+            </div>
 
             <div class="mt-12 animate-bounce no-print" data-aos="fade-up" data-aos-delay="600">
                 <i data-lucide="chevron-down" class="mx-auto w-8 h-8 opacity-70"></i>
@@ -340,47 +457,42 @@
 
     <section id="projects" class="py-20 bg-white">
         <div class="container mx-auto px-6 max-w-6xl">
+            
             <div class="flex flex-col md:flex-row items-center gap-12 mb-24 section">
-                <div class="w-full md:w-1/2 order-2 md:order-1" data-aos="fade-right" data-aos-duration="1000">
+                <div class="w-full md:w-1/2" data-aos="fade-right" data-aos-duration="1000">
                     <div class="flex items-center gap-2 mb-4">
-                        <span class="bg-red-100 text-astra-red px-3 py-1 rounded-full text-xs font-bold">PROJECT 01</span>
-                        <span class="text-gray-500 text-sm">Web Application</span>
+                        <span class="bg-red-100 text-astra-red px-3 py-1 rounded-full text-xs font-bold animate-pulse">PROJECT 01 - IN DEVELOPMENT</span>
+                        <span class="text-gray-500 text-sm">Integrated HRIS Portal</span>
                     </div>
-                    <h3 class="text-3xl font-bold text-gray-900 mb-2">Sistem Absensi PKL Digital Astra</h3>
-                    <p class="text-gray-600 mb-6 text-lg">Sistem absensi digital berbasis lokasi (GPS) untuk validasi kehadiran peserta PKL secara akurat.</p>
+                    <h3 class="text-3xl font-bold text-gray-900 mb-2">ENIGMA System Hub</h3>
+                    <p class="text-gray-600 mb-6 text-lg">Aplikasi "All-In-One" (HRIS & ERP) khusus untuk pengelolaan data vendor Enigma dan monitoring cabang.</p>
                     
                     <ul class="space-y-4 mb-8">
                         <li class="flex items-start">
-                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0">
-                                <i data-lucide="map-pin" class="w-5 h-5"></i>
-                            </div>
+                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0"><i data-lucide="users" class="w-5 h-5"></i></div>
                             <div>
-                                <h4 class="font-bold text-gray-900">Geo-Fencing Technology</h4>
-                                <p class="text-sm text-gray-600">Validasi lokasi otomatis dengan radius toleransi yang dapat diatur (misal: 200m).</p>
+                                <h4 class="font-bold text-gray-900">Employee Self-Service (ESS)</h4>
+                                <p class="text-sm text-gray-600">Manajemen profil, absensi GPS, dan pengajuan otomatis untuk form cuti & kas operasional (Kokas).</p>
                             </div>
                         </li>
                         <li class="flex items-start">
-                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0">
-                                <i data-lucide="activity" class="w-5 h-5"></i>
-                            </div>
+                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0"><i data-lucide="pie-chart" class="w-5 h-5"></i></div>
                             <div>
-                                <h4 class="font-bold text-gray-900">Real-time Status</h4>
-                                <p class="text-sm text-gray-600">Deteksi jarak peserta PKL ke kantor secara live dengan indikator warna.</p>
+                                <h4 class="font-bold text-gray-900">Payroll & Financial Dashboard</h4>
+                                <p class="text-sm text-gray-600">Sistem distribusi slip gaji digital dan optimasi pelaporan Unit Entry Cabang.</p>
                             </div>
                         </li>
                         <li class="flex items-start">
-                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0">
-                                <i data-lucide="shield-check" class="w-5 h-5"></i>
-                            </div>
+                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0"><i data-lucide="layout-dashboard" class="w-5 h-5"></i></div>
                             <div>
-                                <h4 class="font-bold text-gray-900">Secure Gateway</h4>
-                                <p class="text-sm text-gray-600">Sistem login aman untuk validasi identitas siswa magang.</p>
+                                <h4 class="font-bold text-gray-900">Centralized Control Panel</h4>
+                                <p class="text-sm text-gray-600">Manajemen akses admin penuh (CMS) untuk kontrol seluruh data aplikasi dan afiliasi social media.</p>
                             </div>
                         </li>
                     </ul>
 
                     <div class="flex flex-col sm:flex-row items-center gap-6 no-print">
-                        <a href="https://absen-pkl.netlify.app" target="_blank" class="no-underline">
+                        <a href="https://enigmal.vercel.app/" target="_blank" class="no-underline">
                             <button class="tilt-wrapper" aria-label="Lihat Demo">
                                 <div class="sensor tl"></div><div class="sensor tr"></div><div class="sensor bl"></div><div class="sensor br"></div>
                                 <div class="visual-pill">
@@ -393,11 +505,58 @@
                                 </div>
                             </button>
                         </a>
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://absen-pkl.netlify.app" alt="QR Code" class="w-14 h-14 border p-1 rounded-lg bg-white shadow-sm hover:scale-110 transition cursor-pointer">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://enigmal.vercel.app/" alt="QR Code Enigma" class="w-14 h-14 border p-1 rounded-lg bg-white shadow-sm hover:scale-110 transition cursor-pointer">
                     </div>
                 </div>
                 
-                <div class="w-full md:w-1/2 flex justify-center order-1 md:order-2" data-aos="fade-left" data-aos-duration="1000">
+                <div class="w-full md:w-1/2 flex justify-center" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="browser-frame w-full max-w-lg bg-gray-50 h-[380px] flex flex-col relative">
+                        <div class="browser-header">
+                            <div class="browser-dot dot-red"></div>
+                            <div class="browser-dot dot-yellow"></div>
+                            <div class="browser-dot dot-green"></div>
+                            <div class="mx-auto bg-white text-[10px] text-gray-500 py-1 px-4 rounded-md shadow-sm border border-gray-200">https://enigmal.vercel.app/</div>
+                        </div>
+                        <div class="flex-1 p-6 flex flex-col">
+                            <div class="flex justify-between items-center mb-6">
+                                <div class="font-bold text-xl text-gray-900 tracking-wider">ENIGMA <span class="text-astra-red font-light">PORTAL</span></div>
+                                <div class="flex gap-2">
+                                    <div class="bg-gray-200 w-8 h-8 rounded-full"></div>
+                                    <div class="bg-gray-200 w-8 h-8 rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-3 gap-4 mb-6">
+                                <div class="bg-white p-3 rounded-lg border border-gray-200 shadow-sm border-l-4 border-l-blue-500">
+                                    <div class="text-[10px] text-gray-500 font-bold">TOTAL STAFF</div>
+                                    <div class="text-xl font-bold mt-1 text-gray-800">42</div>
+                                </div>
+                                <div class="bg-white p-3 rounded-lg border border-gray-200 shadow-sm border-l-4 border-l-green-500">
+                                    <div class="text-[10px] text-gray-500 font-bold">UNIT ENTRY</div>
+                                    <div class="text-xl font-bold mt-1 text-gray-800">128</div>
+                                </div>
+                                <div class="bg-white p-3 rounded-lg border border-gray-200 shadow-sm border-l-4 border-l-yellow-500">
+                                    <div class="text-[10px] text-gray-500 font-bold">PENGAJUAN CUTI</div>
+                                    <div class="text-xl font-bold mt-1 text-gray-800">3</div>
+                                </div>
+                            </div>
+                            <div class="bg-white flex-1 rounded-lg border border-gray-200 shadow-sm p-4 relative overflow-hidden">
+                                <div class="text-xs font-bold text-gray-800 mb-3 border-b pb-2">Control Panel & Modul</div>
+                                <div class="space-y-2">
+                                    <div class="h-6 bg-gray-100 rounded w-full"></div>
+                                    <div class="h-6 bg-gray-100 rounded w-5/6"></div>
+                                    <div class="h-6 bg-gray-100 rounded w-full"></div>
+                                </div>
+                                <div class="absolute inset-0 bg-white/50 backdrop-blur-[1px] flex items-center justify-center">
+                                    <span class="bg-gray-900 text-white px-3 py-1 rounded-full text-[10px] font-bold shadow-lg animate-bounce">Development Mode</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center gap-12 mb-24 section">
+                <div class="w-full md:w-1/2 flex justify-center" data-aos="fade-right" data-aos-duration="1000">
                     <div class="phone-frame w-72 h-[580px] bg-gray-50">
                         <div class="phone-notch"></div>
                         <div class="h-full flex flex-col font-sans">
@@ -408,20 +567,14 @@
                             <div class="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
                                 <div class="bg-green-50 border border-green-100 p-3 rounded-xl flex justify-between items-center shadow-sm">
                                     <div>
-                                        <div class="flex items-center gap-1 text-green-700 font-bold text-sm mb-1">
-                                            <i data-lucide="map-pin" class="w-4 h-4"></i> Status Lokasi
-                                        </div>
+                                        <div class="flex items-center gap-1 text-green-700 font-bold text-sm mb-1"><i data-lucide="map-pin" class="w-4 h-4"></i> Status Lokasi</div>
                                         <div class="text-xs text-gray-500">Jarak ke Kantor</div>
                                         <div class="text-green-600 font-bold text-lg">8 Meter</div>
                                     </div>
                                     <div class="text-right">
                                         <div class="flex gap-1 mb-1">
-                                            <button class="text-[10px] flex items-center gap-0.5 bg-white border border-blue-200 text-blue-600 px-2 py-1 rounded">
-                                                <i data-lucide="map" class="w-3 h-3"></i> Lihat Peta
-                                            </button>
-                                            <button class="text-[10px] flex items-center gap-0.5 bg-white border border-gray-200 text-gray-600 px-2 py-1 rounded">
-                                                <i data-lucide="refresh-cw" class="w-3 h-3"></i> Refresh
-                                            </button>
+                                            <button class="text-[10px] flex items-center gap-0.5 bg-white border border-blue-200 text-blue-600 px-2 py-1 rounded"><i data-lucide="map" class="w-3 h-3"></i> Lihat Peta</button>
+                                            <button class="text-[10px] flex items-center gap-0.5 bg-white border border-gray-200 text-gray-600 px-2 py-1 rounded"><i data-lucide="refresh-cw" class="w-3 h-3"></i> Refresh</button>
                                         </div>
                                         <div class="text-[10px] text-gray-500">Batas Radius</div>
                                         <div class="text-xs font-bold text-gray-700">200 Meter</div>
@@ -429,9 +582,7 @@
                                 </div>
                                 <div>
                                     <label class="text-xs font-bold text-gray-500 ml-1 mb-1 block">NAMA PESERTA PKL</label>
-                                    <div class="bg-white border border-red-300 text-gray-700 p-3 rounded-lg text-center font-medium shadow-sm">
-                                        -- Pilih Nama Peserta --
-                                    </div>
+                                    <div class="bg-white border border-red-300 text-gray-700 p-3 rounded-lg text-center font-medium shadow-sm">-- Pilih Nama Peserta --</div>
                                 </div>
                                 <div class="grid grid-cols-2 gap-3">
                                     <button class="bg-green-50 border-2 border-green-500 p-4 rounded-xl flex flex-col items-center justify-center shadow-sm relative overflow-hidden">
@@ -455,75 +606,53 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="flex flex-col md:flex-row items-center gap-12 mb-24 section">
-                <div class="w-full md:w-1/2 flex justify-center" data-aos="fade-right" data-aos-duration="1000">
-                    <div class="phone-frame w-72 h-[580px] bg-white">
-                        <div class="phone-notch"></div>
-                         <div class="h-full flex flex-col bg-gray-50 font-sans">
-                            <div class="bg-astra-red p-4 pt-10 flex justify-between items-center text-white shadow-md">
-                                <div class="flex items-center gap-3">
-                                    <div class="bg-white/20 p-1.5 rounded-lg">
-                                        <i data-lucide="activity" class="w-5 h-5 text-white"></i>
-                                    </div>
-                                    <div>
-                                        <div class="font-bold text-sm leading-tight">Monitoring PKL</div>
-                                        <div class="text-[10px] opacity-80">ASTRA DAIHATSU</div>
-                                    </div>
-                                </div>
-                                <button class="bg-white/20 p-1.5 rounded-lg">
-                                    <i data-lucide="log-out" class="w-5 h-5 text-white"></i>
-                                </button>
-                            </div>
-                            <div class="flex-1 overflow-y-auto p-4 bg-gray-50">
-                                <div class="mb-4">
-                                    <h3 class="font-bold text-gray-900 text-xl mb-0.5">Laporan Harian</h3>
-                                    <p class="text-xs text-gray-500">Dokumentasi aktivitas harian peserta.</p>
-                                </div>
-                                
-                                <button class="w-full flex items-center justify-center gap-2 text-red-500 border border-red-200 bg-white hover:bg-red-50 py-2.5 rounded-lg text-sm font-medium mb-4 transition shadow-sm">
-                                    <i data-lucide="trash-2" class="w-4 h-4"></i> Hapus Massal
-                                </button>
-
-                                <div class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 flex items-center gap-2 mb-3">
-                                    <i data-lucide="search" class="w-5 h-5 text-gray-400"></i>
-                                    <input type="text" placeholder="Cari berdasarkan nama peserta..." class="bg-transparent text-sm outline-none flex-1 text-gray-600 placeholder-gray-400">
-                                </div>
-
-                                <div class="flex gap-3 mb-6">
-                                    <div class="bg-gray-100 border border-gray-200 text-gray-700 px-3 py-2.5 rounded-lg text-sm font-bold w-1/2 flex justify-between items-center">
-                                        Februari 2026 <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                                    </div>
-                                    <button class="bg-gray-900 text-white px-3 py-2.5 rounded-lg text-sm font-bold w-1/2 flex justify-center items-center gap-2 hover:bg-gray-800 transition shadow-sm">
-                                        <i data-lucide="file-down" class="w-4 h-4"></i> Export PDF
-                                    </button>
-                                </div>
-
-                                <div class="bg-white border-2 border-dashed border-gray-200 rounded-xl h-48 flex flex-col items-center justify-center text-center p-4">
-                                    <div class="bg-gray-100 p-3 rounded-full mb-3">
-                                        <i data-lucide="calendar-x" class="w-8 h-8 text-gray-400"></i>
-                                    </div>
-                                    <div class="font-bold text-gray-700 mb-1">Tidak ada laporan ditemukan</div>
-                                    <p class="text-xs text-gray-500 max-w-[200px]">Coba ubah kata kunci pencarian atau pilih bulan lain.</p>
-                                </div>
-                            </div>
-                            <div class="bg-white border-t border-gray-200 p-2 flex justify-around items-center pb-4">
-                                <i data-lucide="layout-grid" class="w-6 h-6 text-gray-400"></i>
-                                <i data-lucide="calendar" class="w-6 h-6 text-gray-400"></i>
-                                <div class="bg-red-50 p-2 rounded-xl">
-                                    <i data-lucide="file-text" class="w-6 h-6 text-astra-red"></i>
-                                </div>
-                                <i data-lucide="users" class="w-6 h-6 text-gray-400"></i>
-                                <i data-lucide="info" class="w-6 h-6 text-gray-400"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="w-full md:w-1/2" data-aos="fade-left" data-aos-duration="1000">
                     <div class="flex items-center gap-2 mb-4">
                         <span class="bg-red-100 text-astra-red px-3 py-1 rounded-full text-xs font-bold">PROJECT 02</span>
+                        <span class="text-gray-500 text-sm">Web Application</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-900 mb-2">Sistem Absensi PKL Digital</h3>
+                    <p class="text-gray-600 mb-6 text-lg">Sistem absensi digital berbasis lokasi (GPS) untuk validasi kehadiran peserta PKL secara akurat.</p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0"><i data-lucide="map-pin" class="w-5 h-5"></i></div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Geo-Fencing Technology</h4>
+                                <p class="text-sm text-gray-600">Validasi lokasi otomatis dengan radius toleransi yang dapat diatur (misal: 200m).</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0"><i data-lucide="activity" class="w-5 h-5"></i></div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Real-time Status</h4>
+                                <p class="text-sm text-gray-600">Deteksi jarak peserta PKL ke kantor secara live dengan indikator warna.</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-6 no-print">
+                        <a href="https://absen-pkl.netlify.app" target="_blank" class="no-underline">
+                            <button class="tilt-wrapper" aria-label="Lihat Demo">
+                                <div class="sensor tl"></div><div class="sensor tr"></div><div class="sensor bl"></div><div class="sensor br"></div>
+                                <div class="visual-pill">
+                                    <div class="specular-highlight"></div>
+                                    <div class="text-label"><span class="char" style="--i:0">L</span><span class="char" style="--i:1">i</span><span class="char" style="--i:2">v</span><span class="char" style="--i:3">e</span><span class="char" style="--i:4">&nbsp;</span><span class="char" style="--i:5">D</span><span class="char" style="--i:6">e</span><span class="char" style="--i:7">m</span><span class="char" style="--i:8">o</span></div>
+                                    <div class="chip-wrapper"><div class="chip"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 4.5L21 12M21 12L13.5 19.5M21 12H3" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div>
+                                    <div class="right-glow"></div>
+                                </div>
+                            </button>
+                        </a>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://absen-pkl.netlify.app" alt="QR Code" class="w-14 h-14 border p-1 rounded-lg bg-white shadow-sm hover:scale-110 transition cursor-pointer">
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center gap-12 mb-24 section">
+                <div class="w-full md:w-1/2 order-2 md:order-1" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="bg-red-100 text-astra-red px-3 py-1 rounded-full text-xs font-bold">PROJECT 03</span>
                         <span class="text-gray-500 text-sm">Web Application</span>
                     </div>
                     <h3 class="text-3xl font-bold text-gray-900 mb-2">Digital Monitoring & Reporting</h3>
@@ -531,18 +660,14 @@
                     
                     <ul class="space-y-4 mb-8">
                         <li class="flex items-start">
-                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0">
-                                <i data-lucide="clipboard-list" class="w-5 h-5"></i>
-                            </div>
+                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0"><i data-lucide="clipboard-list" class="w-5 h-5"></i></div>
                             <div>
                                 <h4 class="font-bold text-gray-900">Digital Logbook</h4>
                                 <p class="text-sm text-gray-600">Input laporan harian dengan bukti dokumentasi foto secara real-time.</p>
                             </div>
                         </li>
                         <li class="flex items-start">
-                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0">
-                                <i data-lucide="file-check" class="w-5 h-5"></i>
-                            </div>
+                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-astra-red shrink-0"><i data-lucide="file-check" class="w-5 h-5"></i></div>
                             <div>
                                 <h4 class="font-bold text-gray-900">Auto-Reporting</h4>
                                 <p class="text-sm text-gray-600">Fitur Export PDF otomatis untuk rekap bulanan tanpa rekap manual.</p>
@@ -556,9 +681,7 @@
                                 <div class="sensor tl"></div><div class="sensor tr"></div><div class="sensor bl"></div><div class="sensor br"></div>
                                 <div class="visual-pill">
                                     <div class="specular-highlight"></div>
-                                    <div class="text-label">
-                                        <span class="char" style="--i:0">L</span><span class="char" style="--i:1">i</span><span class="char" style="--i:2">v</span><span class="char" style="--i:3">e</span><span class="char" style="--i:4">&nbsp;</span><span class="char" style="--i:5">D</span><span class="char" style="--i:6">e</span><span class="char" style="--i:7">m</span><span class="char" style="--i:8">o</span>
-                                    </div>
+                                    <div class="text-label"><span class="char" style="--i:0">L</span><span class="char" style="--i:1">i</span><span class="char" style="--i:2">v</span><span class="char" style="--i:3">e</span><span class="char" style="--i:4">&nbsp;</span><span class="char" style="--i:5">D</span><span class="char" style="--i:6">e</span><span class="char" style="--i:7">m</span><span class="char" style="--i:8">o</span></div>
                                     <div class="chip-wrapper"><div class="chip"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 4.5L21 12M21 12L13.5 19.5M21 12H3" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div>
                                     <div class="right-glow"></div>
                                 </div>
@@ -567,12 +690,73 @@
                         <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://pklmonitoring.netlify.app" alt="QR Code" class="w-14 h-14 border p-1 rounded-lg bg-white shadow-sm hover:scale-110 transition cursor-pointer">
                     </div>
                 </div>
+
+                <div class="w-full md:w-1/2 flex justify-center order-1 md:order-2" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="phone-frame w-72 h-[580px] bg-white">
+                        <div class="phone-notch"></div>
+                         <div class="h-full flex flex-col bg-gray-50 font-sans">
+                            <div class="bg-astra-red p-4 pt-10 flex justify-between items-center text-white shadow-md">
+                                <div class="flex items-center gap-3">
+                                    <div class="bg-white/20 p-1.5 rounded-lg"><i data-lucide="activity" class="w-5 h-5 text-white"></i></div>
+                                    <div>
+                                        <div class="font-bold text-sm leading-tight">Monitoring PKL</div>
+                                        <div class="text-[10px] opacity-80">ASTRA DAIHATSU</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-1 overflow-y-auto p-4 bg-gray-50">
+                                <div class="mb-4">
+                                    <h3 class="font-bold text-gray-900 text-xl mb-0.5">Laporan Harian</h3>
+                                    <p class="text-xs text-gray-500">Dokumentasi aktivitas harian peserta.</p>
+                                </div>
+                                <div class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 flex items-center gap-2 mb-3">
+                                    <i data-lucide="search" class="w-5 h-5 text-gray-400"></i>
+                                    <input type="text" placeholder="Cari..." class="bg-transparent text-sm outline-none flex-1 text-gray-600">
+                                </div>
+                                <div class="flex gap-3 mb-6">
+                                    <div class="bg-gray-100 border border-gray-200 text-gray-700 px-3 py-2.5 rounded-lg text-sm font-bold w-1/2 flex justify-between items-center">Feb 2026 <i data-lucide="chevron-down" class="w-4 h-4"></i></div>
+                                    <button class="bg-gray-900 text-white px-3 py-2.5 rounded-lg text-sm font-bold w-1/2 flex justify-center items-center gap-2 hover:bg-gray-800 transition shadow-sm"><i data-lucide="file-down" class="w-4 h-4"></i> Export PDF</button>
+                                </div>
+                                <div class="bg-white border-2 border-dashed border-gray-200 rounded-xl h-48 flex flex-col items-center justify-center text-center p-4">
+                                    <div class="bg-gray-100 p-3 rounded-full mb-3"><i data-lucide="calendar-x" class="w-8 h-8 text-gray-400"></i></div>
+                                    <div class="font-bold text-gray-700 mb-1">Tidak ada laporan</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="flex flex-col md:flex-row items-center gap-12 section">
-                <div class="w-full md:w-1/2 order-2 md:order-1" data-aos="fade-up" data-aos-duration="1000">
+                <div class="w-full md:w-1/2 flex justify-center" data-aos="zoom-in" data-aos-duration="1000">
+                    <div class="w-full max-w-sm bg-[#1E1E1E] rounded-xl shadow-2xl overflow-hidden border border-gray-800 font-mono-custom text-[11px] sm:text-xs">
+                        <div class="bg-[#323233] px-4 py-3 flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
+                            <div class="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
+                            <div class="w-3 h-3 rounded-full bg-[#27C93F]"></div>
+                            <span class="text-gray-400 ml-2">Administrator: Windows PowerShell</span>
+                        </div>
+                        <div class="p-5 text-gray-300 space-y-3">
+                            <p><span class="text-green-400">PS C:\Users\win11\Server></span> .\run-server.bat</p>
+                            <p class="text-gray-400">[INFO] Loading configuration files...</p>
+                            <p class="text-gray-400">[INFO] Database connection successfully established.</p>
+                            <p class="text-gray-400">[INFO] Starting GS4 status listener on port 25565 (TCP)</p>
+                            <p class="text-gray-400">[INFO] Binding Geyser connection to port 19132 (UDP)</p>
+                            <p class="text-blue-400 font-bold flex items-center gap-1">[SUCCESS] System is online and accepting connections. <span class="w-2 h-4 bg-gray-400 inline-block blink"></span></p>
+                            
+                            <p class="mt-4"><span class="text-green-400">PS C:\Users\win11\Server></span> Get-Process java | Select-Object CPU, WorkingSet</p>
+                            <div class="text-gray-300 bg-black/30 p-2 rounded border border-gray-700">
+                                CPU(s)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WorkingSet(MB)<br>
+                                ------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--------------<br>
+                                18.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4250.00
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2" data-aos="fade-left" data-aos-duration="1000">
                     <div class="flex items-center gap-2 mb-4">
-                        <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-xs font-bold">PROJECT 03</span>
+                        <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-xs font-bold">PROJECT 04</span>
                         <span class="text-gray-500 text-sm">Server Infrastructure</span>
                     </div>
                     <h3 class="text-3xl font-bold text-gray-900 mb-2">Live Server & Network Management</h3>
@@ -599,32 +783,6 @@
                         </li>
                     </ul>
                 </div>
-                
-                <div class="w-full md:w-1/2 flex justify-center order-1 md:order-2" data-aos="zoom-in" data-aos-duration="1000">
-                    <div class="w-full max-w-sm bg-[#1E1E1E] rounded-xl shadow-2xl overflow-hidden border border-gray-800 font-mono-custom text-[11px] sm:text-xs">
-                        <div class="bg-[#323233] px-4 py-3 flex items-center gap-2">
-                            <div class="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
-                            <div class="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
-                            <div class="w-3 h-3 rounded-full bg-[#27C93F]"></div>
-                            <span class="text-gray-400 ml-2">Administrator: Windows PowerShell</span>
-                        </div>
-                        <div class="p-5 text-gray-300 space-y-3">
-                            <p><span class="text-green-400">PS C:\Users\win11\Server></span> .\run-server.bat</p>
-                            <p class="text-gray-400">[INFO] Loading configuration files...</p>
-                            <p class="text-gray-400">[INFO] Database connection successfully established.</p>
-                            <p class="text-gray-400">[INFO] Starting GS4 status listener on port 25565 (TCP)</p>
-                            <p class="text-gray-400">[INFO] Binding Geyser connection to port 19132 (UDP)</p>
-                            <p class="text-blue-400 font-bold flex items-center gap-1">[SUCCESS] System is online and accepting connections. <span class="w-2 h-4 bg-gray-400 inline-block blink"></span></p>
-                            
-                            <p class="mt-4"><span class="text-green-400">PS C:\Users\win11\Server></span> Get-Process java | Select-Object CPU, WorkingSet</p>
-                            <div class="text-gray-300 bg-black/30 p-2 rounded border border-gray-700">
-                                CPU(s)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WorkingSet(MB)<br>
-                                ------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--------------<br>
-                                18.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4250.00
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>
@@ -633,12 +791,13 @@
     <section id="contact" class="bg-gray-900 text-white py-20 relative overflow-hidden section">
         <div class="container mx-auto px-6 text-center relative z-10" data-aos="zoom-in" data-aos-duration="1000">
             <h2 class="text-3xl md:text-4xl font-bold mb-6 leading-tight">Siap Berinovasi untuk <br/><span class="text-red-500">Infrastruktur IT Perusahaan.</span></h2>
+            
             <p class="text-gray-400 text-lg mb-12 max-w-3xl mx-auto">
                 Dengan fondasi ekosistem Windows Server dan pengalaman implementasi web application secara mandiri, saya siap berkontribusi penuh sebagai IT Server Staff untuk menjaga stabilitas sistem serta beradaptasi cepat dengan teknologi Cloud perusahaan.
             </p>
 
             <div class="flex flex-col md:flex-row justify-center gap-6 mb-12 no-print">
-                <a href="https://wa.me/6289669459011" class="flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-xl font-bold transition shadow-lg shadow-green-900/20">
+                <a href="https://wa.me/6281289278289" class="flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-xl font-bold transition shadow-lg shadow-green-900/20">
                     <i data-lucide="message-circle" class="w-6 h-6"></i>
                     Chat WhatsApp
                 </a>
